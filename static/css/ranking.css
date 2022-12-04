@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #00C1C1;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #31435B;
+}
+
+.content{
+    width: 35%;
+    height: 72vh;
+    background-color: white;
+    border-radius: 5%;
+}
+
+.cabecera{
+    width: 100%;
+    height: 20vh;
+}
+
+.cabecera > .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 15vh;
+}
+
+.cabecera > .title > span > i{
+    font-size: larger;
+    margin-right: 20px;
+}
+
+.cabecera > .nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    font-size: larger;
+    font-weight: bold;
+    border-bottom: 1px solid grey;
+}
+
+.cabecera > .nav > span{
+    width: 33%;
+    height: 100%;
+    text-align: center;
+}
+
+.cuerpo{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.row > span{
+    width: 33%;
+    height: 100%;
+    text-align: center;
+    font-size: large;
+}
+
+.row > span > i{
+    font-size: 1.3em;
+}

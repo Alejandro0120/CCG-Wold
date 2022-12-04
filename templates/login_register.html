@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../static/css/login_register.css">
+    <link rel="shortcut icon" href="./../static/img/Logo-CCG.png" type="image/x-icon">
+    <title>Login/Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="main">
+        <div class="cabecera">
+            <img src="../static/img/Logo-CCG.png" alt="">
+        </div>
+        <div class="nav">
+            <div id="login" class="border" onclick="formInicio();">INICAR SESIÓN</div>
+            <div id="register" onclick="formRegistro();">REGISTRARSE</div>
+        </div>
+        <div class="cuerpo">
+            <form class="cuerpo2 login" action="./loginUsuario/" method="post">{% csrf_token %}
+                <input type="text" name="user" id="user" placeholder="Nombre de usuario" required/>
+                <input type="password" name="pass" id="pass" placeholder="Contraseña" required/>
+                <input type="submit" name="" id="" value="INICIAR SESIÓN"/>
+                <p>No tienes cuenta? <a onclick="formRegistro();">Registrate</a></p>
+            </form>
+            <form class="cuerpo2 register" action="./registrarUsuario/" method="post">{% csrf_token %}
+                <input type="text" name="userReg" id="userReg" placeholder="Nombre de usuario" required/>
+                <input type="password" name="passReg" id="passReg" placeholder="Contraseña" required/>
+                <input type="password" name="passReg2" id="passReg2" placeholder="Confirmar contraseña" required/>
+                <input type="submit" name="" id="" value="REGISTRARSE"/>
+                <p>Tienes una cuenta? <a onclick="formInicio();">Inicia sesión</a></p>
+            </form>
+        </div>
+        
+    </main>
+    <script src="../static/js/animaciónLoginRegister.js"></script>
+</body>
+</html>

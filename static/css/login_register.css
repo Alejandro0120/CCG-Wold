@@ -1,0 +1,129 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    font-weight:  400;
+}
+
+body{
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #31435B;
+}
+
+.main{
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.cabecera{
+    border: 0;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+    border-bottom: .1px solid rgb(128, 128, 128);
+    cursor: pointer;
+}
+
+.cabecera > img{
+    width: 40%;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav > div{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00C1C1;
+    font-weight: bold;
+    transition: .5s;
+}
+
+
+.nav > div.border{
+    border-bottom: 5px solid #31435B;
+}
+
+.cuerpo{
+    display: flex;
+    flex-direction: row;
+}
+
+.cuerpo2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.cuerpo2 > input{
+    width: 80%;
+    height: 50px;
+    margin: 10px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0px 6px 20px rgba(49, 67, 91, 16%);
+    color: #00C1C1;
+    padding-left: 10px;
+}
+
+.cuerpo2 > input[type="text"]:focus, input[type="password"]:focus{
+    outline: none;
+    margin-left: 20px;
+    color: #00C1C1;
+    padding-left: 10px;
+}
+
+.cuerpo2 > input::placeholder{
+    color: #00C1C1;
+    padding-left: 10px;
+}
+
+.cuerpo2 > input[type="submit"]{
+    background-color: #00C1C1;
+    color: white;
+    cursor: pointer;
+}
+
+.cuerpo2 > p > a{
+    color: #00C1C1;
+    cursor: pointer;
+}
+
+.register{
+    position: absolute;
+    left: 80%;
+    display: none;
+    margin: 15px;
+    
+}
+
+.register.active{
+    position: relative;
+    left: 0;
+    display: flex;
+    margin: 15px;
+    
+}
+
+.login.desActive{
+    position: absolute;
+    left: -80%;
+    display: none;
+}
+
+.nav > div:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos</title>
+    <link rel="shortcut icon" href="../../static/img/Logo-CCG.png" type="image/x-icon">
+    <!--CSS-->
+    <link rel="stylesheet" href="../../static/css/screenGames.css">
+    <!--Fuente Google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="content">
+        <div class="nav">
+            <div class="category">
+                <select name="category" id="categoria" class="custom-select" onchange="categoria()">
+                    
+                    <option value="all">Escoge una categoría</option>
+                    {% for c in categorias %}
+                    <option value="{{c.id}}">{{c.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="search">
+                <input type="search" name="" id="search" placeholder="Buscar..." onchange="search()" value="">
+                <div class="glass">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                
+            </div>
+            <div class="name">
+                <span>{{userName}}</span>
+            </div>
+        </div>
+        <div class="games" id="games">
+            {% for j in juegos %}
+            <div class="game" id="game" itemid="{{j.categoria_id}}" onclick="window.location ='/screenGames/{{userName}}/screenGame/{{j.id}}'">
+                <img src="{{j.URLImagen}}" alt="{{j.name}}" >
+                <div class="gameContent">
+                    <p>{{j.name}}</p>
+                    <p>{{j.description}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        // document.querySelectorAll("#game").forEach((game)=>{
+        //     game.addEventListener('click', function(){
+        //         let value = Number(game.attributes[2].value) 
+        //         window.location = "/screenGame/"+value;
+                
+        //     })
+        // })
+        let games = document.querySelectorAll('#game');
+        let divGames = document.querySelector('#games');
+
+        function search(){
+            let search = document.querySelector('#search');
+            
+            console.log(search.value)
+            
+            games.forEach((game)=>{
+                
+                if(game.children[1].children[0].innerHTML.toUpperCase().includes(search.value.toUpperCase())){
+                    console.log(game)
+                    game.style.display = 'block'
+                }else{
+                    game.style.display = 'none'
+                }
+                console.log(game.children[1].children[0].innerText, game.attributes[2].value)
+            });  
+        }
+
+        function categoria(){
+            let categ = document.querySelector('#categoria');
+            console.log(typeof(categ.value));
+            games.forEach((game)=>{
+                switch(categ.value){
+                    case '1':
+                    case '2':
+                        if(game.attributes[2].value === categ.value){
+                            game.style.display = 'block'
+                        }else{
+                            game.style.display = 'none'
+                        }
+                        break;
+                    case 'all':
+                        game.style.display = 'block'
+                        break;
+                }
+            })
+        }
+    </script>
+</body>
+</html>
