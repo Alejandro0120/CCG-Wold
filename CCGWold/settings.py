@@ -142,6 +142,6 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
 
 # DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static/"
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / "static/"
+]
