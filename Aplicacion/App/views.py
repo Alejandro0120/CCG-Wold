@@ -6,10 +6,6 @@ from django.db import connection
 
 def inicio(request):
     
-    # Categoria.objects.create(name='Plataforma')
-    URLImagen='/static/img/game3.png'
-    Juego.objects.filter(id=3).update(categoria=2)
-    # Categoria.objects.filter(id=2).update(name='Clasicos')
     return render(request, "index.html")
 
 def login(request):
