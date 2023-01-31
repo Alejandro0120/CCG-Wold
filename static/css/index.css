@@ -5,7 +5,7 @@
 
 body{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin: 0;
     background-color: #31435B;
     display: flex;
@@ -79,4 +79,14 @@ body{
 .botones > ul > li > .button:hover{
     cursor: pointer;
     background-color: #089797
+}
+
+
+@media (max-width: 420px){
+    .main{
+        width: 80%;
+    }
+    .botones{
+        width: 70%;
+    }
 }

@@ -5,7 +5,6 @@ from django.db import connection
 # Create your views here.
 
 def inicio(request):
-    
     return render(request, "index.html")
 
 def login(request):
@@ -33,7 +32,7 @@ def registrarUsuario(request):
             return redirect('/login_register/')
         except ObjectDoesNotExist:
             Jugador.objects.create(name=nameUser, password=userPass)
-            return redirect('/screenGames/',userName=nameUser)
+            return redirect('ScreenGames',userName=nameUser)
     else:
         return redirect('/login_register/')
 

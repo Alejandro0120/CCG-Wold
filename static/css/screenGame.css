@@ -57,3 +57,12 @@ body{
     font-size: larger;
     margin-right: 20px;
 }
+
+@media screen and (max-width: 420px){
+    .content{
+        width: 80%;
+    }
+    .botons{
+        width: 100%;
+    }
+}
